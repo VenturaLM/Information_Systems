@@ -1,0 +1,1680 @@
+{
+  "intents": [
+    {
+      "intent": "Hola",
+      "examples": [
+        {
+          "text": "Hola"
+        },
+        {
+          "text": "Cómo estas"
+        },
+        {
+          "text": "Hey"
+        },
+        {
+          "text": "Qué tal"
+        },
+        {
+          "text": "Cómo va eso"
+        },
+        {
+          "text": "Qué hay"
+        },
+        {
+          "text": "Buenas"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Listado_Pizzas",
+      "examples": [
+        {
+          "text": "Pizzas prefabricadas"
+        },
+        {
+          "text": "Pizzas precocinadas"
+        },
+        {
+          "text": "Muéstrame las pizzas"
+        },
+        {
+          "text": "Cuántas pizzas tienes"
+        },
+        {
+          "text": "indice"
+        },
+        {
+          "text": "índice"
+        },
+        {
+          "text": "Pizzas de la casa"
+        },
+        {
+          "text": "Volver"
+        },
+        {
+          "text": "Volver al indice"
+        },
+        {
+          "text": "Volver al índice"
+        }
+      ],
+      "description": "Listado de Pizzas."
+    },
+    {
+      "intent": "Confirmar_Pedido",
+      "examples": [
+        {
+          "text": "Confirmar"
+        },
+        {
+          "text": "Confirmar pedido"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "Pedido",
+      "examples": [
+        {
+          "text": "Cancelar pedido"
+        },
+        {
+          "text": "Qué tienes"
+        },
+        {
+          "text": "Me gustaría pedir"
+        },
+        {
+          "text": "Quería realizar un pedido"
+        },
+        {
+          "text": "Qué puedes ofrecerme"
+        },
+        {
+          "text": "Quiero comer"
+        },
+        {
+          "text": "Inicio"
+        }
+      ],
+      "description": "Solicita atención para un pedido."
+    }
+  ],
+  "entities": [
+    {
+      "entity": "auxiliar",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "auxiliar",
+          "patterns": [
+            "\\b([A-Za-zÁÉÍÓÚáéíóú]{1}[a-zñáéíóú]+[\\s]*)+$\\b"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Masa",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Gorda",
+          "synonyms": [
+            "Extra",
+            "Gruesa"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Rellena de queso",
+          "synonyms": [
+            "Rellena"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Fina",
+          "synonyms": [
+            "Delgada"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Nombre_Completo",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "Nombre Completo",
+          "patterns": [
+            "\\b([A-Za-zÁÉÍÓÚáéíóú]{1}[a-zñáéíóú]+[\\s]*)+$\\b"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Ingredientes",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Orégano",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Pepperoni",
+          "synonyms": [
+            "Peperoni"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Piña",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Jamón",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Queso",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Cebolla",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Aceitunas",
+          "synonyms": [
+            "Aceitunas Negras"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Atún",
+          "synonyms": [
+            "Atun",
+            "Bonito"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Champiñones",
+          "synonyms": [
+            "Champiñón",
+            "Champiñon"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Pizza",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Carbonara",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Bacon",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Barbacoa",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Ibérica",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "4 Quesos",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Florentina",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Hawaiana",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Dirección",
+      "values": [
+        {
+          "type": "patterns",
+          "value": "Dirección",
+          "patterns": [
+            "\\b([A-Za-zÁÉÍÓÚáéíóú0-9]{1}[a-zA-Zñáéíóú0-9., /º]+[\\s]*)+$\\b"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "Fabricación",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "true",
+          "synonyms": [
+            "Quiero fabricar mi propia pizza",
+            "Quiero mi propia pizza",
+            "Quiero fabricar",
+            "Quiero hacer mi propia pizza",
+            "Quiero hacer mi pizza",
+            "Quiero crear mi pizza"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "false",
+          "synonyms": [
+            "Añadir a mi pedido",
+            "Añadir",
+            "Añadir a mi cesta",
+            "Comprar"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    }
+  },
+  "dialog_nodes": [
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1589373551307",
+      "event_name": "focus",
+      "dialog_node": "handler_4_1589373551307",
+      "previous_sibling": "handler_3_1589373551307"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_2_1589373551307",
+      "context": {
+        "auxiliar": "@auxiliar.literal"
+      },
+      "conditions": "@auxiliar",
+      "event_name": "input",
+      "dialog_node": "handler_3_1589373551307"
+    },
+    {
+      "type": "standard",
+      "title": "Pizza_4: Ibérica.",
+      "output": {
+        "generic": [
+          {
+            "source": "https://i.imgur.com/5mwx9dx.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "<strong><u>Ingredientes</u></strong>"
+              },
+              {
+                "text": "- Salsa de tomate y orégano.\n- Mozarella.\n- Tomate natural.\n- Aceite de oliva.\n- Jamón ibérico."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "Añadir a mi pedido.",
+                "value": {
+                  "input": {
+                    "text": "false"
+                  }
+                }
+              },
+              {
+                "label": "Volver.",
+                "value": {
+                  "input": {
+                    "text": "listado de pizzas"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1589364307156",
+      "conditions": "@Pizza:Ibérica",
+      "dialog_node": "node_5_1589366883743",
+      "previous_sibling": "node_4_1589366418206"
+    },
+    {
+      "type": "standard",
+      "title": "Pizza_1: Barbacoa.",
+      "output": {
+        "generic": [
+          {
+            "source": "https://i.imgur.com/5MmW7ls.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "<strong><u>Ingredientes</u></strong>"
+              },
+              {
+                "text": "- 5 Quesos.\n- Salsa Barbacoa.\n- Masa fina.\n- Base de Mozzarella.\n- Bacon.\n- Pollo marinado.\n- Carne de vacuno."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "Añadir a mi pedido.",
+                "value": {
+                  "input": {
+                    "text": "false"
+                  }
+                }
+              },
+              {
+                "label": "Volver.",
+                "value": {
+                  "input": {
+                    "text": "listado de pizzas"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1589364307156",
+      "conditions": "@Pizza:Barbacoa",
+      "dialog_node": "node_3_1589365232831",
+      "previous_sibling": "node_8_1589365381402"
+    },
+    {
+      "type": "standard",
+      "title": "Pizza_5: 4 Quesos.",
+      "output": {
+        "generic": [
+          {
+            "source": "https://i.imgur.com/V6zj5aD.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "<strong><u>Ingredientes</u></strong>"
+              },
+              {
+                "text": "- Salsa de tomate y orégano.\n- Mezcla de 4 quesos."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "Añadir a mi pedido.",
+                "value": {
+                  "input": {
+                    "text": "false"
+                  }
+                }
+              },
+              {
+                "label": "Volver.",
+                "value": {
+                  "input": {
+                    "text": "Listado de pizzas"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1589364307156",
+      "conditions": "@Pizza:(4 Quesos)",
+      "dialog_node": "node_8_1589366960963",
+      "previous_sibling": "node_5_1589366883743"
+    },
+    {
+      "type": "standard",
+      "title": "Pizza_3: Carbonara.",
+      "output": {
+        "generic": [
+          {
+            "source": "https://i.imgur.com/lC7V2Ea.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "<strong><u>Ingredientes</u></strong>"
+              },
+              {
+                "text": "- 5 Quesos.\n- Salsa Carbonara.\n- Mozzarella.\n- Bacon.\n- Champiñones."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "Añadir a mi pedido.",
+                "value": {
+                  "input": {
+                    "text": "false"
+                  }
+                }
+              },
+              {
+                "label": "Volver.",
+                "value": {
+                  "input": {
+                    "text": "listado de pizzas"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1589364307156",
+      "conditions": "@Pizza:Carbonara",
+      "dialog_node": "node_4_1589366418206",
+      "previous_sibling": "node_1_1589365878238"
+    },
+    {
+      "type": "standard",
+      "title": "Pizza_7: Hawaiana.",
+      "output": {
+        "generic": [
+          {
+            "source": "https://i.imgur.com/dlRxTqW.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "<strong><u>Ingredientes</u></strong>"
+              },
+              {
+                "text": "- Salsa de tomate y orégano.\n- Mozzarella.\n- Doble de york.\n- Piña."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "Añadir a mi pedido.",
+                "value": {
+                  "input": {
+                    "text": "false"
+                  }
+                }
+              },
+              {
+                "label": "Volver.",
+                "value": {
+                  "input": {
+                    "text": "Listado de pizzas"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1589364307156",
+      "conditions": "@Pizza:Hawaiana",
+      "dialog_node": "node_1_1589367057411",
+      "previous_sibling": "node_9_1589367013996"
+    },
+    {
+      "type": "standard",
+      "title": "Pizza_6: Florentina.",
+      "output": {
+        "generic": [
+          {
+            "source": "https://i.imgur.com/evgpkcW.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "<strong><u>Ingredientes</u></strong>"
+              },
+              {
+                "text": "- Salsa carbonara.\n- Mozzarella.\n- Rúcula.\n- Queso de rulo.\n- Tomate natural."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "Añadir a mi pedido.",
+                "value": {
+                  "input": {
+                    "text": "false"
+                  }
+                }
+              },
+              {
+                "label": "Volver.",
+                "value": {
+                  "input": {
+                    "text": "Listado de pizzas"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1589364307156",
+      "conditions": "@Pizza:Florentina",
+      "dialog_node": "node_9_1589367013996",
+      "previous_sibling": "node_8_1589366960963"
+    },
+    {
+      "type": "standard",
+      "title": "Pizza_2: Bacon.",
+      "output": {
+        "generic": [
+          {
+            "source": "https://i.imgur.com/kIGMssG.jpg",
+            "response_type": "image"
+          },
+          {
+            "values": [
+              {
+                "text": "<strong><u>Ingredientes</u></strong>"
+              },
+              {
+                "text": "- 5 Quesos.\n- Salsa Barbacoa.\n- Base de Mozzarella.\n- Bacon."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "Añadir a mi pedido.",
+                "value": {
+                  "input": {
+                    "text": "false"
+                  }
+                }
+              },
+              {
+                "label": "Volver.",
+                "value": {
+                  "input": {
+                    "text": "listado de pizzas"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1589364307156",
+      "conditions": "@Pizza:Bacon",
+      "dialog_node": "node_1_1589365878238",
+      "previous_sibling": "node_3_1589365232831"
+    },
+    {
+      "type": "standard",
+      "title": "Listado de pizzas.",
+      "output": {
+        "generic": [
+          {
+            "title": "Elija o escriba una de las siguientes pizzas de la casa:",
+            "options": [
+              {
+                "label": "Barbacoa.",
+                "value": {
+                  "input": {
+                    "text": "Barbacoa"
+                  }
+                }
+              },
+              {
+                "label": "Bacon.",
+                "value": {
+                  "input": {
+                    "text": "Bacon"
+                  }
+                }
+              },
+              {
+                "label": "Carbonara.",
+                "value": {
+                  "input": {
+                    "text": "Carbonara"
+                  }
+                }
+              },
+              {
+                "label": "Ibérica.",
+                "value": {
+                  "input": {
+                    "text": "Ibérica"
+                  }
+                }
+              },
+              {
+                "label": "4 Quesos",
+                "value": {
+                  "input": {
+                    "text": "4 Quesos"
+                  }
+                }
+              },
+              {
+                "label": "Florentina.",
+                "value": {
+                  "input": {
+                    "text": "Florentina"
+                  }
+                }
+              },
+              {
+                "label": "Hawaiana.",
+                "value": {
+                  "input": {
+                    "text": "Hawaiana"
+                  }
+                }
+              }
+            ],
+            "description": "Le muestro todas las pizzas disponibles:",
+            "response_type": "option"
+          },
+          {
+            "title": "",
+            "options": [
+              {
+                "label": "Inicio.",
+                "value": {
+                  "input": {
+                    "text": "Inicio"
+                  }
+                }
+              }
+            ],
+            "description": "¿Se ha equivocado de opción o quiere volver atrás?",
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_1_1589364307156",
+      "conditions": "#Listado_Pizzas",
+      "dialog_node": "node_8_1589365381402"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "¿Cómo se llama?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_3_1589369630706",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1589369630710",
+      "previous_sibling": "handler_5_1589369630710"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1589369630706",
+      "context": {
+        "Nombre_Completo": "@Nombre_Completo.literal"
+      },
+      "conditions": "@Nombre_Completo",
+      "event_name": "input",
+      "dialog_node": "handler_5_1589369630710"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Seleccione el Ingrediente 1. Puede elegir entre:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "values": [
+              {
+                "text": "- Aceitunas.\n- Atún.\n- Champiñones.\n- Jamón.\n- Orégano.\n- Pepperoni.\n- Piña.\n- Queso."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "slot_6_1589369843340",
+      "event_name": "focus",
+      "dialog_node": "handler_3_1589369843345",
+      "previous_sibling": "handler_4_1589369843345"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "No hay existencias del ingrediente indicado."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_6_1589369843340",
+      "event_name": "nomatch",
+      "dialog_node": "handler_5_1589370391091",
+      "previous_sibling": "handler_3_1589369843345"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1589369843340",
+      "context": {
+        "Ingrediente_1": "@Ingredientes"
+      },
+      "conditions": "@Ingredientes",
+      "event_name": "input",
+      "dialog_node": "handler_4_1589369843345"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1589373551300",
+      "variable": "$Nombre_Completo",
+      "dialog_node": "slot_5_1589373551307",
+      "previous_sibling": "slot_2_1589373551307"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1589373551300",
+      "variable": "$Pizza",
+      "dialog_node": "slot_8_1589373617638",
+      "previous_sibling": "slot_5_1589373551307"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1589373551300",
+      "variable": "$Direccion",
+      "dialog_node": "slot_29_1589373551307",
+      "previous_sibling": "slot_23_1589373551307"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1589373551300",
+      "variable": "$Masa",
+      "dialog_node": "slot_23_1589373551307",
+      "previous_sibling": "slot_8_1589373617638"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_1_1589373551300",
+      "variable": "$auxiliar",
+      "dialog_node": "slot_2_1589373551307"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Introduzca la dirección de entrega."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_29_1589373551307",
+      "event_name": "focus",
+      "dialog_node": "handler_31_1589373551307",
+      "previous_sibling": "handler_30_1589373551307"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_29_1589373551307",
+      "context": {
+        "Direccion": "@Dirección.literal"
+      },
+      "conditions": "@Dirección",
+      "event_name": "input",
+      "dialog_node": "handler_30_1589373551307"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Introduzca la dirección de entrega."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_5_1589370040893",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1589370040898",
+      "previous_sibling": "handler_9_1589370040898"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1589370040893",
+      "context": {
+        "Direccion": "@Dirección.literal"
+      },
+      "conditions": "@Dirección",
+      "event_name": "input",
+      "dialog_node": "handler_9_1589370040898"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Seleccione el Ingrediente 3.\n- Aceitunas.\n- Atún.\n- Champiñones.\n- Jamón.\n- Orégano.\n- Pepperoni.\n- Piña.\n- Queso."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_9_1589370193437",
+      "event_name": "focus",
+      "dialog_node": "handler_9_1589370193442",
+      "previous_sibling": "handler_5_1589370193442"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "No hay existencias del ingrediente indicado."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_9_1589370193437",
+      "event_name": "nomatch",
+      "dialog_node": "handler_10_1589370426741",
+      "previous_sibling": "handler_9_1589370193442"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_9_1589370193437",
+      "context": {
+        "Ingrediente_3": "@Ingredientes"
+      },
+      "conditions": "@Ingredientes",
+      "event_name": "input",
+      "dialog_node": "handler_5_1589370193442"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "No hay existencias del ingrediente indicado."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_7_1589370215273",
+      "event_name": "nomatch",
+      "dialog_node": "handler_7_1589370438801",
+      "previous_sibling": "handler_5_1589370215277"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Seleccione el Ingrediente 2.\n- Aceitunas.\n- Atún.\n- Champiñones.\n- Jamón.\n- Orégano.\n- Pepperoni.\n- Piña.\n- Queso."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_7_1589370215273",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1589370215277",
+      "previous_sibling": "handler_2_1589370215277"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1589370215273",
+      "context": {
+        "Ingrediente_2": "@Ingredientes"
+      },
+      "conditions": "@Ingredientes",
+      "event_name": "input",
+      "dialog_node": "handler_2_1589370215277"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "¿Qué tipo de masa desea? Las opciones disponibles son las siguientes:"
+              },
+              {
+                "text": "- Masa fina."
+              },
+              {
+                "text": "- Masa gruesa."
+              },
+              {
+                "text": "- Masa rellena de queso."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "slot_6_1589369955796",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1589369955801",
+      "previous_sibling": "handler_2_1589369955801"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_6_1589369955796",
+      "context": {
+        "Masa": "@Masa"
+      },
+      "conditions": "@Masa",
+      "event_name": "input",
+      "dialog_node": "handler_2_1589369955801"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "¿Cómo se llama?"
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_5_1589373551307",
+      "event_name": "focus",
+      "dialog_node": "handler_7_1589373551307",
+      "previous_sibling": "handler_6_1589373551307"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1589373551307",
+      "context": {
+        "Nombre_Completo": "@Nombre_Completo.literal"
+      },
+      "conditions": "@Nombre_Completo",
+      "event_name": "input",
+      "dialog_node": "handler_6_1589373551307"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_10_1589367791886",
+      "variable": "$Ingrediente_1",
+      "dialog_node": "slot_6_1589369843340",
+      "previous_sibling": "slot_3_1589369630706"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_10_1589367791886",
+      "variable": "$Ingrediente_2",
+      "dialog_node": "slot_7_1589370215273",
+      "previous_sibling": "slot_6_1589369843340"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_10_1589367791886",
+      "variable": "$Ingrediente_4",
+      "dialog_node": "slot_7_1589370211681",
+      "previous_sibling": "slot_9_1589370193437"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_10_1589367791886",
+      "variable": "$Ingrediente_3",
+      "dialog_node": "slot_9_1589370193437",
+      "previous_sibling": "slot_7_1589370215273"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_10_1589367791886",
+      "variable": "$Direccion",
+      "dialog_node": "slot_5_1589370040893",
+      "previous_sibling": "slot_6_1589369955796"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_10_1589367791886",
+      "variable": "$Nombre_Completo",
+      "dialog_node": "slot_3_1589369630706",
+      "previous_sibling": "slot_5_1589371610314"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_10_1589367791886",
+      "variable": "$Masa",
+      "dialog_node": "slot_6_1589369955796",
+      "previous_sibling": "slot_7_1589370211681"
+    },
+    {
+      "type": "slot",
+      "output": {},
+      "parent": "node_10_1589367791886",
+      "variable": "$auxiliar",
+      "dialog_node": "slot_5_1589371610314"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "¿Qué tipo de masa desea? Las opciones disponibles son las siguientes:"
+              },
+              {
+                "text": "- Masa fina."
+              },
+              {
+                "text": "- Masa gruesa."
+              },
+              {
+                "text": "- Masa rellena de queso."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "parent": "slot_23_1589373551307",
+      "event_name": "focus",
+      "dialog_node": "handler_25_1589373551307",
+      "previous_sibling": "handler_24_1589373551307"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_23_1589373551307",
+      "context": {
+        "Masa": "@Masa"
+      },
+      "conditions": "@Masa",
+      "event_name": "input",
+      "dialog_node": "handler_24_1589373551307"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1589371610314",
+      "event_name": "focus",
+      "dialog_node": "handler_6_1589371610321",
+      "previous_sibling": "handler_1_1589371610321"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_5_1589371610314",
+      "context": {
+        "auxiliar": "@auxiliar.literal"
+      },
+      "conditions": "@auxiliar",
+      "event_name": "input",
+      "dialog_node": "handler_1_1589371610321"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "generic": [
+          {
+            "title": "Confirme la pizza que quiere pedir:",
+            "options": [
+              {
+                "label": "Barbacoa.",
+                "value": {
+                  "input": {
+                    "text": "Barbacoa"
+                  }
+                }
+              },
+              {
+                "label": "Bacon.",
+                "value": {
+                  "input": {
+                    "text": "Bacon"
+                  }
+                }
+              },
+              {
+                "label": "Carbonara.",
+                "value": {
+                  "input": {
+                    "text": "Carbonara"
+                  }
+                }
+              },
+              {
+                "label": "Ibérica.",
+                "value": {
+                  "input": {
+                    "text": "Ibérica"
+                  }
+                }
+              },
+              {
+                "label": "4 Quesos.",
+                "value": {
+                  "input": {
+                    "text": "4 Quesos"
+                  }
+                }
+              },
+              {
+                "label": "Florentina.",
+                "value": {
+                  "input": {
+                    "text": "Florentina"
+                  }
+                }
+              },
+              {
+                "label": "Hawaiana.",
+                "value": {
+                  "input": {
+                    "text": "Hawaiana"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "slot_8_1589373617638",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1589373617645",
+      "previous_sibling": "handler_1_1589373617645"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_8_1589373617638",
+      "context": {
+        "Pizza": "@Pizza"
+      },
+      "conditions": "@Pizza",
+      "event_name": "input",
+      "dialog_node": "handler_1_1589373617645"
+    },
+    {
+      "type": "event_handler",
+      "output": {
+        "text": {
+          "values": [
+            "Seleccione el Ingrediente 4.\n- Aceitunas.\n- Atún.\n- Champiñones.\n- Jamón.\n- Orégano.\n- Pepperoni.\n- Piña.\n- Queso."
+          ],
+          "selection_policy": "sequential"
+        }
+      },
+      "parent": "slot_7_1589370211681",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1589370211686",
+      "previous_sibling": "handler_7_1589370211686"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_7_1589370211681",
+      "context": {
+        "Ingrediente_4": "@Ingredientes"
+      },
+      "conditions": "@Ingredientes",
+      "event_name": "input",
+      "dialog_node": "handler_7_1589370211686"
+    },
+    {
+      "type": "standard",
+      "title": "Finalización cesta: Fabricación de la pizza.",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Muy bien $Nombre_Completo, le hago un resumen del pedido:\n- Pizza con $Ingrediente_1, $Ingrediente_2, $Ingrediente_3, $Ingrediente_4.\n- Masa $Masa.\n- Dirección de entrega: $Direccion."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "values": [
+              {
+                "text": "Muchas gracias por su pedido. Esperamos que vuelva pronto."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#Confirmar_Pedido && $Ingrediente_1",
+      "dialog_node": "node_9_1589386230111",
+      "previous_sibling": "node_5_1589376127298"
+    },
+    {
+      "type": "standard",
+      "title": "Finalización cesta: Pizza de la casa.",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Muy bien $Nombre_Completo, le hago un resumen del pedido:\n- Pizza $Pizza.\n- Masa $Masa.\n- Dirección de entrega: $Direccion."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "values": [
+              {
+                "text": "Muchas gracias por su pedido. Esperamos que vuelva pronto."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          }
+        ]
+      },
+      "conditions": "#Confirmar_Pedido && $Pizza",
+      "dialog_node": "node_5_1589376127298",
+      "previous_sibling": "node_1_1589364307156"
+    },
+    {
+      "type": "standard",
+      "title": "Pedido",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "De acuerdo. ¿En primer lugar, qué clase de pedido desea?"
+              },
+              {
+                "text": "Perfecto. ¿Qué desea?"
+              },
+              {
+                "text": "Muy bien. ¿Qué prefiere?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          },
+          {
+            "title": "Elija o escriba una de las siguientes opciones:",
+            "options": [
+              {
+                "label": "Quiero fabricar mi propia pizza.",
+                "value": {
+                  "input": {
+                    "text": "true"
+                  }
+                }
+              },
+              {
+                "label": "Pizzas de la casa.",
+                "value": {
+                  "input": {
+                    "text": "Listado de pizzas"
+                  }
+                }
+              }
+            ],
+            "description": "Puede fabricar su propia pizza con un set de máximo 4 ingredientes ó seleccionar una de nuestras pizzas.",
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "#Pedido",
+      "dialog_node": "node_5_1589364614747",
+      "previous_sibling": "Bienvenido"
+    },
+    {
+      "type": "frame",
+      "title": "Cesta: Fabricación de la pizza.",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Muy bien $Nombre_Completo, le hago un resumen del pedido:\n- Pizza con $Ingrediente_1, $Ingrediente_2, $Ingrediente_3, $Ingrediente_4.\n- Masa $Masa.\n- Dirección de entrega: $Direccion."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "values": [
+              {
+                "text": "- Tiempo estimado: 20 minutos."
+              },
+              {
+                "text": "- Tiempo estimado: 23 minutos."
+              },
+              {
+                "text": "- Tiempo estimado: 34 minutos."
+              },
+              {
+                "text": "- Tiempo estimado: 17 minutos."
+              },
+              {
+                "text": "- Tiempo estimado: 45 minutos."
+              },
+              {
+                "text": "- Tiempo estimado: 50 minutos. (Numerosos pedidos en curso. Disculpe las molestias)."
+              },
+              {
+                "text": "- Tiempo estimado: 37 minutos."
+              },
+              {
+                "text": "- Tiempo estimado: 29 minutos."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          },
+          {
+            "title": "Elija o escriba una de las siguientes opciones:",
+            "options": [
+              {
+                "label": "Cancelar pedido.",
+                "value": {
+                  "input": {
+                    "text": "Cancelar Pedido"
+                  }
+                }
+              },
+              {
+                "label": "Confirmar pedido.",
+                "value": {
+                  "input": {
+                    "text": "Confirmar pedido"
+                  }
+                }
+              }
+            ],
+            "description": "¿Se ha equivocado de opción o quiere volver atrás?",
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "@Fabricación:true",
+      "dialog_node": "node_10_1589367791886",
+      "previous_sibling": "node_5_1589364614747"
+    },
+    {
+      "type": "folder",
+      "title": "Listado de pizzas.",
+      "conditions": "#Listado_Pizzas || @Pizza",
+      "dialog_node": "node_1_1589364307156",
+      "previous_sibling": "node_1_1589373551300"
+    },
+    {
+      "type": "standard",
+      "title": "En otras cosas",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "No le he entendido. Intente reformular la consulta."
+              },
+              {
+                "text": "¿Puede expresarse con otras palabras? No le he entendido."
+              },
+              {
+                "text": "No entendí el significado."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "anything_else",
+      "dialog_node": "En otras cosas",
+      "previous_sibling": "node_9_1589386230111",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "frame",
+      "title": "Cesta: Pizza de la casa.",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Muy bien $Nombre_Completo, le hago un resumen del pedido:\n- Pizza $Pizza.\n- Masa $Masa.\n- Dirección de entrega: $Direccion."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "multiline"
+          },
+          {
+            "values": [
+              {
+                "text": "- Tiempo estimado: 20 minutos."
+              },
+              {
+                "text": "- Tiempo estimado: 23 minutos."
+              },
+              {
+                "text": "- Tiempo estimado: 34 minutos."
+              },
+              {
+                "text": "- Tiempo estimado: 17 minutos."
+              },
+              {
+                "text": "- Tiempo estimado: 45 minutos."
+              },
+              {
+                "text": "- Tiempo estimado: 50 minutos. (Numerosos pedidos en curso. Disculpe las molestias)."
+              },
+              {
+                "text": "- Tiempo estimado: 37 minutos."
+              },
+              {
+                "text": "- Tiempo estimado: 29 minutos."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          },
+          {
+            "title": "Elija o escriba una de las siguientes opciones:",
+            "options": [
+              {
+                "label": "Cancelar pedido.",
+                "value": {
+                  "input": {
+                    "text": "Cancelar Pedido"
+                  }
+                }
+              },
+              {
+                "label": "Confirmar pedido.",
+                "value": {
+                  "input": {
+                    "text": "Confirmar"
+                  }
+                }
+              }
+            ],
+            "description": "¿Se ha equivocado de opción o quiere volver atrás?",
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "@Fabricación:false",
+      "dialog_node": "node_1_1589373551300",
+      "previous_sibling": "node_10_1589367791886"
+    },
+    {
+      "type": "standard",
+      "title": "Bienvenido",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Bienvenido a la pizzería. ¿Qué desea?"
+              },
+              {
+                "text": "Hola, le doy la bienvenida a la pizzería. ¿En qué le ayudo?"
+              },
+              {
+                "text": "¿En qué le puedo servir?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          },
+          {
+            "title": "Elija o escriba una de las siguientes opciones:",
+            "options": [
+              {
+                "label": "Quiero hacer un pedido.",
+                "value": {
+                  "input": {
+                    "text": "Quiero hacer un pedido"
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "conditions": "welcome || #Hola",
+      "dialog_node": "Bienvenido"
+    }
+  ],
+  "counterexamples": [
+    {
+      "text": "añadir"
+    },
+    {
+      "text": "Barbacoa"
+    },
+    {
+      "text": "Quiero fabricar mi propia pizza"
+    }
+  ],
+  "system_settings": {
+    "disambiguation": {
+      "prompt": "Querías decir:",
+      "enabled": true,
+      "randomize": true,
+      "max_suggestions": 5,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "Ninguna de las anteriores"
+    },
+    "system_entities": {
+      "enabled": true
+    },
+    "human_agent_assist": {
+      "prompt": "Querías decir:"
+    }
+  },
+  "learning_opt_out": false,
+  "name": "Pizzería",
+  "language": "es",
+  "description": ""
+}
